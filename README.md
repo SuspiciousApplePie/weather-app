@@ -1,2 +1,3 @@
-# restaurant-page
-Restaurant page using JavaScript
+# Weather app using Javascript with Visual Crossing API
+
+

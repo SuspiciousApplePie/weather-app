@@ -4,15 +4,15 @@ import { defineConfig, globalIgnores } from "eslint/config";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default defineConfig([
-  globalIgnores(["**/*.config.{js,mjs,cjs}"]),
+  globalIgnores(["**/*.config.{js,mjs,cjs}", "**/webpack.*.{js,mjs,cjs}"]),
   js.configs.recommended,
-  { 
-    files: ["**/*.{js,mjs,cjs}"], 
+  {
+    files: ["**/*.{js,mjs,cjs}"],
     languageOptions: { globals: globals.browser },
     rules: {
       eqeqeq: ["error", "smart"],
-      "no-unused-vars": ["error", {argsIgnorePattern: "^_"}],
-      "prefer-const": ["error", { ignoreReadBeforeAssign: true }]
+      "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+      "prefer-const": ["error", { ignoreReadBeforeAssign: true }],
     },
   },
   eslintConfigPrettier,

@@ -7,3 +7,7 @@ export const searchBar = {
   BUTTON_TEXT: "Search",
   BUTTON_TYPE: "submit",
 };
+
+export const loadingSpinner = {
+  CLASS_NAME: "loading-spinner",
+};

@@ -1,4 +1,4 @@
-import { searchBar } from "./constant.js";
+import { searchBar, loadingSpinner } from "./constant.js";
 import { setUpSumbitListener, setUpInputListener } from "./controller.js";
 
 export function init() {
@@ -9,11 +9,24 @@ export function init() {
   setUpSumbitListener();
 }
 
-/* Remove loading screen */
-function removeLoading() {
+/* Loading spinners */
+export function createLoadingSpinner(place) {
+  const p = document.createElement("p");
+  p.className = loadingSpinner.CLASS_NAME;
+  p.textContent = `Loading results for ${place}`;
+
+  return p;
+}
+
+export function renderLoadingSpinner(spinner) {
+  const main = document.querySelector(".main");
+  main.appendChild(spinner);
+}
+
+export function removeLoading() {
   const loadingElement = document
     .querySelector(".main")
-    .querySelector(".loading-spinner");
+    .querySelector(`.${loadingSpinner.CLASS_NAME}`);
   loadingElement.remove();
 }
 

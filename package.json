@@ -7,19 +7,21 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "lint": "eslint src/modules/.",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SuspiciousApplePie/weather-app.git"
+    "url": "git+https://github.com/SuspiciousApplePie/droplets.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SuspiciousApplePie/weather-app/issues"
+    "url": "https://github.com/SuspiciousApplePie/droplets/issues"
   },
-  "homepage": "https://github.com/SuspiciousApplePie/weather-app#readme",
+  "homepage": "https://github.com/SuspiciousApplePie/droplets#readme",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "css-loader": "^7.1.4",

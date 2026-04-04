@@ -25,6 +25,7 @@ export const weatherCard = {
   DESCRIPTION_CLASS: "description",
   DATE_CLASS: "date",
   ICON_CLASS: "icon",
+  CARD_CLASS: "weather-card",
 };
 
 export const icons = {
@@ -33,4 +34,16 @@ export const icons = {
   RAIN: "rain",
   PARTLY_CLOUDY: "partly-cloudy-day",
   SNOW: "snow",
+};
+
+export const toggleButton = {
+  CLASS_NAME: "temp-icon",
+  FARENHEIT: {
+    text: "°F",
+    id: "show-farenheit",
+  },
+  CELSIUS: {
+    text: "°C",
+    id: "show-celsius",
+  },
 };

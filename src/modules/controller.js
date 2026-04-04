@@ -1,14 +1,15 @@
-import { searchBar } from "./constant";
+import { searchBar, toggleButton } from "./constant";
 import { fetchWeatherData } from "./weather";
 import {
   createLoadingSpinner,
   renderLoadingSpinner,
   removeLoading,
-  WeatherCard,
   getWeatherWrapper,
   clearContent,
   changeHeaderText,
   getHeader,
+  showInFahrenheit,
+  showInCelsius,
 } from "./ui";
 
 let currentWeatherData;
@@ -41,16 +42,7 @@ export function setUpSumbitListener() {
       })
       .then((weatherData) => {
         currentWeatherData = weatherData;
-        currentWeatherData.forEach((item) => {
-          const component = new WeatherCard(
-            item.temp,
-            item.datetime,
-            item.icon,
-            item.description,
-          );
-          const card = component.createWeatherCard();
-          component.renderWeatherCard(card);
-        });
+        showInCelsius(currentWeatherData);
       })
       .catch((error) => {
         console.log(error);
@@ -76,9 +68,24 @@ export function setUpInputListener() {
   });
 }
 
+export function setUpClickListener() {
+  const main = document.querySelector(".main");
+  main.addEventListener("click", (event) => {
+    if (event.target.id === toggleButton.CELSIUS.id) {
+      const wrapper = getWeatherWrapper();
+      clearContent(wrapper);
+      showInCelsius(currentWeatherData);
+    } else if (event.target.id === toggleButton.FARENHEIT.id) {
+      const wrapper = getWeatherWrapper();
+      clearContent(wrapper);
+      showInFahrenheit(currentWeatherData);
+    }
+  });
+}
+
 function validateSearchInput(input) {
   if (input.validity.valueMissing) {
-    input.setCustomValidity("Search for place");
+    changeHeaderText;
   } else {
     input.setCustomValidity("");
   }

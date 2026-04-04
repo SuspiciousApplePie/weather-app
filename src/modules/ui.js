@@ -5,8 +5,13 @@ import {
   weatherCard,
   header,
   icons,
+  toggleButton,
 } from "./constant.js";
-import { setUpSumbitListener, setUpInputListener } from "./controller.js";
+import {
+  setUpSumbitListener,
+  setUpInputListener,
+  setUpClickListener,
+} from "./controller.js";
 import { format, parseISO, isToday, isTomorrow } from "date-fns";
 import * as weatherIcons from "./icons.js";
 
@@ -14,10 +19,13 @@ export function init() {
   removeLoading();
   const searchElement = createSearchBar();
   renderSearchBar(searchElement);
+  const buttons = createButton();
+  renderButton(buttons);
   const head = createWeatherCardHeader();
   renderHeader(head);
   const wrapper = createWrapper();
   renderWrapper(wrapper);
+  setUpClickListener();
   setUpInputListener();
   setUpSumbitListener();
 }
@@ -104,11 +112,12 @@ export function changeHeaderText(head, place) {
 /* Weather UI components */
 
 export class WeatherCard {
-  constructor(temp, date, icon, description) {
+  constructor(temp, date, icon, description, symbol) {
     this.temp = temp;
     this.date = date;
     this.icon = icon;
     this.description = description;
+    this.symbol = symbol;
   }
 
   renderWeatherCard(card) {
@@ -123,6 +132,7 @@ export class WeatherCard {
 
   createWeatherCard() {
     const card = document.createElement("div");
+    card.className = weatherCard.CARD_CLASS;
     card.appendChild(this.#createImage());
     card.appendChild(this.#createTemp());
     card.appendChild(this.#createDescription());
@@ -140,7 +150,7 @@ export class WeatherCard {
   #createTemp() {
     const temp = document.createElement("h2");
     temp.className = weatherCard.TEMP_CLASS;
-    temp.textContent = this.temp;
+    temp.textContent = this.temp + this.symbol;
     return temp;
   }
 
@@ -204,4 +214,63 @@ function checkIcon(icon) {
   else if (icon === icons.RAIN) return weatherIcons.rainy;
   else if (icon === icons.PARTLY_CLOUDY) return weatherIcons.partlyCloudy;
   else if (icon === icons.SNOW) return weatherIcons.snow;
+}
+
+/* Toggle Buttons */
+
+export function createButton() {
+  const buttonDetails = [toggleButton.CELSIUS, toggleButton.FARENHEIT];
+  const div = document.createElement("div");
+  div.className = toggleButton.CLASS_NAME;
+  buttonDetails.forEach((item) => {
+    const button = document.createElement("button");
+    button.textContent = item.text;
+    button.id = item.id;
+    div.appendChild(button);
+  });
+
+  return div;
+}
+
+export function renderButton(buttons) {
+  const main = document.querySelector(".main");
+  main.appendChild(buttons);
+}
+
+export function showInFahrenheit(currentWeatherData) {
+  if (!currentWeatherData) return null;
+  currentWeatherData.forEach((item) => {
+    const component = new WeatherCard(
+      item.temp,
+      item.datetime,
+      item.icon,
+      item.description,
+      toggleButton.FARENHEIT.text,
+    );
+    const card = component.createWeatherCard();
+    component.renderWeatherCard(card);
+  });
+}
+
+export function showInCelsius(currentWeatherData) {
+  if (!currentWeatherData) return null;
+  const celsiusWeatherData = currentWeatherData.map((item) =>
+    formatNumber(Number(((item.temp - 32) * 5) / 9)),
+  );
+  currentWeatherData.forEach((item, index) => {
+    const component = new WeatherCard(
+      celsiusWeatherData[index],
+      item.datetime,
+      item.icon,
+      item.description,
+      toggleButton.CELSIUS.text,
+    );
+    const card = component.createWeatherCard();
+    component.renderWeatherCard(card);
+  });
+}
+
+function formatNumber(num) {
+  if (num % 1 === 0) return num.toString();
+  return Number(num.toFixed(1));
 }

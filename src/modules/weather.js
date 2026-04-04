@@ -6,5 +6,7 @@ export async function fetchWeatherData(place) {
   if (!response.ok) throw new Error("Failed to fetch api");
   console.log(response);
   const weatherData = await response.json();
-  return weatherData.days;
+  const { resolvedAddress, days } = weatherData;
+  const formattedWeather = { resolvedAddress, days };
+  return formattedWeather;
 }

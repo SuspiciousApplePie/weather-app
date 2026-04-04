@@ -1,3 +1,3 @@
-import { init } from "./ui.js";
+import { init } from "./app";
 
 init();

@@ -7,28 +7,8 @@ import {
   icons,
   toggleButton,
 } from "./constant.js";
-import {
-  setUpSumbitListener,
-  setUpInputListener,
-  setUpClickListener,
-} from "./controller.js";
 import { format, parseISO, isToday, isTomorrow } from "date-fns";
 import * as weatherIcons from "./icons.js";
-
-export function init() {
-  removeLoading();
-  const searchElement = createSearchBar();
-  renderSearchBar(searchElement);
-  const buttons = createButton();
-  renderButton(buttons);
-  const head = createWeatherCardHeader();
-  renderHeader(head);
-  const wrapper = createWrapper();
-  renderWrapper(wrapper);
-  setUpClickListener();
-  setUpInputListener();
-  setUpSumbitListener();
-}
 
 /* Loading spinners */
 export function createLoadingSpinner(place) {
@@ -53,7 +33,7 @@ export function removeLoading() {
 
 /* Search bar component*/
 
-function createSearchBar() {
+export function createSearchBar() {
   const searchElement = document.createElement("search");
   searchElement.role = searchBar.ROLE;
   searchElement.className = searchBar.CLASS_NAME;
@@ -78,19 +58,19 @@ function createSearchBar() {
   return searchElement;
 }
 
-function renderSearchBar(searchElement) {
+export function renderSearchBar(searchElement) {
   const main = document.querySelector(".main");
   main.appendChild(searchElement);
 }
 /* Header */
 
-function createWeatherCardHeader() {
+export function createWeatherCardHeader() {
   const h1 = document.createElement("h1");
   h1.className = header.CLASS_NAME;
   return h1;
 }
 
-function renderHeader(header) {
+export function renderHeader(header) {
   const main = document.querySelector(".main");
   main.appendChild(header);
 }

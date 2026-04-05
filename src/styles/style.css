@@ -1,5 +1,12 @@
 :root {
+  --logo-icon-size: 48px;
   --weather-icons: 124px;
+  --main-color: #7cc6fe;
+  --seconday-color: #f1f2f3;
+  --gray: #6a7b76;
+  --dark: #333;
+  --padding-sm: 8px;
+  --padding-md: calc(var(--padding-sm) * 2);
 }
 
 *,
@@ -15,6 +22,7 @@ svg {
   width: var(--weather-icons);
 }
 
+/* Clear Day Icon */
 .clear-day-icon .cls-1 {
   fill: #f5b952;
 }
@@ -38,6 +46,8 @@ svg {
   stroke-width: 4px;
 }
 
+/* Cloudy Day */
+
 .cloudy-icon .cls-1 {
   fill: #aac7d5;
 }
@@ -55,6 +65,7 @@ svg {
   stroke-linecap: round;
 }
 
+/* Rainy */
 .rainy-icon .cls-1 {
   fill: #aac7d5;
 }
@@ -72,6 +83,8 @@ svg {
   stroke-linecap: round;
 }
 
+/* Partly Cloudy */
+
 .partly-cloudy-icon .cls-1 {
   fill: #f5b952;
 }
@@ -87,7 +100,7 @@ svg {
   stroke-miterlimit: 10;
   stroke-width: 4px;
 }
-
+/* Snow */
 .snow-icon .cls-1 {
   fill: #cae3f6;
 }
@@ -115,7 +128,7 @@ svg {
 .snow-icon .cls-6 {
   stroke-width: 4px;
 }
-
+/* Fog */
 .fog-icon .st0 {
   fill: none;
   stroke: #221f1f;
@@ -123,7 +136,7 @@ svg {
   stroke-linecap: round;
   stroke-miterlimit: 10;
 }
-
+/* Wind */
 .wind-icon .cls-1 {
   fill: #aac7d5;
 }
@@ -144,14 +157,39 @@ svg {
   stroke-width: 3px;
 }
 
+/*Feels like*/
+
 .feels-like-icon .cls-1 {
   fill: none;
 }
-
+/* Wind speed */
 .wind-speed-icon path {
   fill: #aac7d5;
 }
-
+/*Precip chance*/
 .precip-chance-icon path {
   fill: #aac7d5;
+}
+/* Container */
+.container {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  background-color: var(--main-color);
+  gap: 8px;
+  padding: var(--padding-sm);
+  color: var(--seconday-color);
+  box-shadow: 0 4px 10px 1px var(--gray);
+}
+
+.header svg {
+  height: var(--logo-icon-size);
+  width: var(--logo-icon-size);
+}
+
+.main {
+  padding: var(--padding-md);
 }

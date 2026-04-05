@@ -28,6 +28,7 @@ export const weatherCard = {
   CARD_CLASS: "weather-card",
   FEELS_LIKE_CLASS: "feels-like",
   HUMIDITY_CLASS: "humidity",
+  PRECIP_CLASS: "precip-chance",
 };
 
 export const icons = {

@@ -93,7 +93,16 @@ export function changeHeaderText(head, place) {
 /* Weather UI components */
 
 export class WeatherCard {
-  constructor(temp, date, icon, description, symbol, feelsLike, humidity) {
+  constructor(
+    temp,
+    date,
+    icon,
+    description,
+    symbol,
+    feelsLike,
+    humidity,
+    precipProb,
+  ) {
     this.temp = temp;
     this.date = date;
     this.icon = icon;
@@ -101,6 +110,7 @@ export class WeatherCard {
     this.symbol = symbol;
     this.feelsLike = feelsLike;
     this.humidity = humidity;
+    this.precipProb = precipProb;
   }
 
   renderWeatherCard(card) {
@@ -121,6 +131,7 @@ export class WeatherCard {
     card.appendChild(this.#createDescription());
     card.appendChild(this.#createFeelsLike());
     card.appendChild(this.#createHumidity());
+    card.appendChild(this.#createPrecipChance());
     card.appendChild(this.#createDate());
     return card;
   }
@@ -168,6 +179,13 @@ export class WeatherCard {
     time.textContent = date;
 
     return time;
+  }
+
+  #createPrecipChance() {
+    const precipProb = document.createElement("p");
+    precipProb.className = weatherCard.PRECIP_CLASS;
+    precipProb.textContent = `Chance of rain ${this.precipProb}%`;
+    return precipProb;
   }
 }
 
@@ -247,6 +265,7 @@ export function showInFahrenheit(currentWeatherData) {
       toggleButton.FARENHEIT.text,
       item.feelslike,
       item.humidity,
+      item.precipprob,
     );
     const card = component.createWeatherCard();
     component.renderWeatherCard(card);
@@ -272,6 +291,7 @@ export function showInCelsius(currentWeatherData) {
       toggleButton.CELSIUS.text,
       item.feelslike,
       item.humidity,
+      item.precipprob,
     );
     const card = component.createWeatherCard();
     component.renderWeatherCard(card);

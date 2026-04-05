@@ -3,7 +3,7 @@ export const searchBar = {
   CLASS_NAME: "search-bar",
   INPUT_NAME: "search-place",
   INPUT_ID: "search-place",
-  INPUT_PLACEHOLDER: "Japan",
+  INPUT_PLACEHOLDER: "Search for City",
   BUTTON_TEXT: "Search",
   BUTTON_TYPE: "submit",
 };

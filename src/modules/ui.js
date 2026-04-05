@@ -89,7 +89,7 @@ export function getHeader() {
 }
 
 export function changeHeaderText(head, place) {
-  head.textContent = `Weather forecast of ${place}`;
+  head.textContent = place;
 }
 
 export function createErrorMessage() {

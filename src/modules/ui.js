@@ -179,16 +179,27 @@ export class WeatherCard {
   }
 
   #createFeelsLike() {
-    const feelsLike = document.createElement("p");
+    const feelsLike = document.createElement("div");
     feelsLike.className = weatherCard.FEELS_LIKE_CLASS;
-    feelsLike.textContent = `Feels like: ${this.feelsLike}${this.symbol}`;
+
+    feelsLike.innerHTML = weatherIcons.weatherCardIcons.FEELS_LIKE;
+
+    const span = document.createElement("span");
+    span.textContent = `${this.feelsLike}${this.symbol}`;
+
+    feelsLike.appendChild(span);
     return feelsLike;
   }
 
   #createHumidity() {
-    const humidity = document.createElement("p");
+    const humidity = document.createElement("div");
     humidity.className = weatherCard.HUMIDITY_CLASS;
-    humidity.textContent = `Humidity: ${this.humidity}${this.symbol}`;
+    humidity.innerHTML = weatherIcons.weatherCardIcons.HUMIDITY;
+
+    const span = document.createElement("span");
+    span.textContent = `${this.humidity}${this.symbol}`;
+
+    humidity.appendChild(span);
     return humidity;
   }
 
@@ -205,14 +216,25 @@ export class WeatherCard {
   #createPrecipChance() {
     const precipProb = document.createElement("p");
     precipProb.className = weatherCard.PRECIP_CLASS;
-    precipProb.textContent = `Chance of rain ${this.precipProb}%`;
+
+    precipProb.innerHTML = weatherIcons.weatherCardIcons.PRECIP_CHANCE;
+
+    const span = document.createElement("span");
+    span.textContent = `${this.precipProb}%`;
+    precipProb.appendChild(span);
     return precipProb;
   }
 
   #createWindspeed() {
-    const windspeedElem = document.createElement("p");
+    const windspeedElem = document.createElement("div");
     windspeedElem.className = weatherCard.WIND_CLASS;
-    windspeedElem.textContent = `Windspeed: ${this.windSpeed} ${this.speedSymbol}`;
+
+    windspeedElem.innerHTML = weatherIcons.weatherCardIcons.WIND_SPEED;
+
+    const span = document.createElement("span");
+    span.textContent = `${this.windSpeed} ${this.speedSymbol}`;
+
+    windspeedElem.appendChild(span);
     return windspeedElem;
   }
 }

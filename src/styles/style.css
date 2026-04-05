@@ -143,3 +143,15 @@ svg {
   stroke-linecap: round;
   stroke-width: 3px;
 }
+
+.feels-like-icon .cls-1 {
+  fill: none;
+}
+
+.wind-speed-icon path {
+  fill: #aac7d5;
+}
+
+.precip-chance-icon path {
+  fill: #aac7d5;
+}

@@ -20,6 +20,10 @@ export const header = {
   CLASS_NAME: "location",
 };
 
+export const error = {
+  CLASS_NAME: "error-message",
+};
+
 export const weatherCard = {
   TEMP_CLASS: "temp",
   DESCRIPTION_CLASS: "description",

@@ -7,6 +7,7 @@ import {
   icons,
   toggleButton,
   windMeasurement,
+  error,
 } from "./constant.js";
 import { format, parseISO, isToday, isTomorrow } from "date-fns";
 import * as weatherIcons from "./icons.js";
@@ -89,6 +90,20 @@ export function getHeader() {
 
 export function changeHeaderText(head, place) {
   head.textContent = `Weather forecast of ${place}`;
+}
+
+export function createErrorMessage() {
+  const errorMessage = document.createElement("p");
+  errorMessage.textContent =
+    "Couldn't find that location. Try a different city";
+  errorMessage.className = error.CLASS_NAME;
+  return errorMessage;
+}
+
+export function renderErrorMessage(errorMessage) {
+  const weatherWrap = document.querySelector(`.${weatherWrapper.CLASS_NAME}`);
+  if (!weatherCard) throw new Error("Element does not exist");
+  weatherWrap.appendChild(errorMessage);
 }
 
 /* Weather UI components */

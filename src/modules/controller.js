@@ -10,6 +10,8 @@ import {
   getHeader,
   showInFahrenheit,
   showInCelsius,
+  createErrorMessage,
+  renderErrorMessage,
 } from "./ui";
 
 let currentWeatherData;
@@ -43,13 +45,17 @@ export function setUpSumbitListener() {
       .then((weatherData) => {
         currentWeatherData = weatherData;
         showInCelsius(currentWeatherData);
+        const head = getHeader();
+        changeHeaderText(head, currentWeatherData.resolvedAddress);
       })
       .catch((error) => {
         console.log(error);
+        const wrapper = getWeatherWrapper();
+        clearContent(wrapper);
+        const errorMessage = createErrorMessage();
+        renderErrorMessage(errorMessage);
       })
       .finally(() => {
-        const head = getHeader();
-        changeHeaderText(head, currentWeatherData.resolvedAddress);
         removeLoading();
       });
   });

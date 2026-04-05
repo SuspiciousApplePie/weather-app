@@ -1,5 +1,5 @@
 :root {
-  --weather-icons: 96px;
+  --weather-icons: 124px;
 }
 
 *,
@@ -13,4 +13,133 @@
 svg {
   height: var(--weather-icons);
   width: var(--weather-icons);
+}
+
+.clear-day-icon .cls-1 {
+  fill: #f5b952;
+}
+.clear-day-icon .cls-2,
+.clear-day-icon .cls-3,
+.clear-day-icon .cls-4 {
+  fill: none;
+  stroke: #000;
+  stroke-miterlimit: 10;
+}
+
+.clear-day-icon .cls-2,
+.clear-day-icon .cls-4 {
+  stroke-width: 5px;
+}
+.clear-day-icon .cls-3,
+.clear-day-icon .cls-4 {
+  stroke-linecap: round;
+}
+.clear-day-icon .cls-3 {
+  stroke-width: 4px;
+}
+
+.cloudy-icon .cls-1 {
+  fill: #aac7d5;
+}
+.cloudy-icon .cls-2 {
+  fill: #cae3f6;
+}
+.cloudy-icon .cls-3,
+.cloudy-icon .cls-4 {
+  fill: none;
+  stroke: #000;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
+}
+.cloudy-icon .cls-4 {
+  stroke-linecap: round;
+}
+
+.rainy-icon .cls-1 {
+  fill: #aac7d5;
+}
+.rainy-icon .cls-2 {
+  fill: #cae3f6;
+}
+.rainy-icon .cls-3,
+.rainy-icon .cls-4 {
+  fill: none;
+  stroke: #000;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
+}
+.rainy-icon .cls-4 {
+  stroke-linecap: round;
+}
+
+.partly-cloudy-icon .cls-1 {
+  fill: #f5b952;
+}
+.partly-cloudy-icon .cls-2 {
+  fill: #aac7d5;
+}
+.partly-cloudy-icon .cls-3 {
+  fill: #cae3f6;
+}
+.partly-cloudy-icon .cls-4 {
+  fill: none;
+  stroke: #000;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
+}
+
+.snow-icon .cls-1 {
+  fill: #cae3f6;
+}
+.snow-icon .cls-2 {
+  fill: #aac7d5;
+}
+.snow-icon .cls-3,
+.snow-icon .cls-4,
+.snow-icon .cls-5,
+.snow-icon .cls-6 {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+.snow-icon .cls-3,
+.snow-icon .cls-6 {
+  stroke: #000;
+}
+.snow-icon .cls-4,
+.snow-icon .cls-5 {
+  stroke: #231f20;
+}
+.snow-icon .cls-5 {
+  stroke-linecap: round;
+}
+.snow-icon .cls-6 {
+  stroke-width: 4px;
+}
+
+.fog-icon .st0 {
+  fill: none;
+  stroke: #221f1f;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.wind-icon .cls-1 {
+  fill: #aac7d5;
+}
+.wind-icon .cls-2 {
+  fill: #cae3f6;
+}
+.wind-icon .cls-3,
+.wind-icon .cls-4 {
+  fill: none;
+  stroke: #000;
+  stroke-miterlimit: 10;
+}
+.wind-icon .cls-3 {
+  stroke-width: 4px;
+}
+.wind-icon .cls-4 {
+  stroke-linecap: round;
+  stroke-width: 3px;
 }

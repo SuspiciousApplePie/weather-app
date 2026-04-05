@@ -6,6 +6,7 @@ import {
   header,
   icons,
   toggleButton,
+  windMeasurement,
 } from "./constant.js";
 import { format, parseISO, isToday, isTomorrow } from "date-fns";
 import * as weatherIcons from "./icons.js";
@@ -102,6 +103,8 @@ export class WeatherCard {
     feelsLike,
     humidity,
     precipProb,
+    windSpeed,
+    speedSymbol,
   ) {
     this.temp = temp;
     this.date = date;
@@ -111,6 +114,8 @@ export class WeatherCard {
     this.feelsLike = feelsLike;
     this.humidity = humidity;
     this.precipProb = precipProb;
+    this.windSpeed = windSpeed;
+    this.speedSymbol = speedSymbol;
   }
 
   renderWeatherCard(card) {
@@ -132,6 +137,7 @@ export class WeatherCard {
     card.appendChild(this.#createFeelsLike());
     card.appendChild(this.#createHumidity());
     card.appendChild(this.#createPrecipChance());
+    card.appendChild(this.#createWindspeed());
     card.appendChild(this.#createDate());
     return card;
   }
@@ -186,6 +192,13 @@ export class WeatherCard {
     precipProb.className = weatherCard.PRECIP_CLASS;
     precipProb.textContent = `Chance of rain ${this.precipProb}%`;
     return precipProb;
+  }
+
+  #createWindspeed() {
+    const windspeedElem = document.createElement("p");
+    windspeedElem.className = weatherCard.WIND_CLASS;
+    windspeedElem.textContent = `Windspeed: ${this.windSpeed} ${this.speedSymbol}`;
+    return windspeedElem;
   }
 }
 
@@ -268,6 +281,8 @@ export function showInFahrenheit(currentWeatherData) {
       item.feelslike,
       item.humidity,
       item.precipprob,
+      item.windspeed,
+      windMeasurement.MILES,
     );
     const card = component.createWeatherCard();
     component.renderWeatherCard(card);
@@ -279,9 +294,10 @@ export function showInCelsius(currentWeatherData) {
   const celsiusWeatherData = currentWeatherData.days.map((item) => {
     return {
       ...item,
-      temp: formatNumber(item.temp),
-      feelslike: formatNumber(item.feelslike),
-      humidity: formatNumber(item.humidity),
+      temp: formatNumberToCelcius(item.temp),
+      feelslike: formatNumberToCelcius(item.feelslike),
+      humidity: formatNumberToCelcius(item.humidity),
+      windspeed: formatWindSpeedToKilometers(item.windspeed),
     };
   });
   celsiusWeatherData.forEach((item) => {
@@ -294,14 +310,22 @@ export function showInCelsius(currentWeatherData) {
       item.feelslike,
       item.humidity,
       item.precipprob,
+      item.windspeed,
+      windMeasurement.KIlOMETER,
     );
     const card = component.createWeatherCard();
     component.renderWeatherCard(card);
   });
 }
 
-function formatNumber(num) {
+function formatNumberToCelcius(num) {
   const calculatedNum = Number(((num - 32) * 5) / 9);
   if (calculatedNum % 1 === 0) calculatedNum.toString();
   return Number(calculatedNum.toFixed(1));
+}
+
+function formatWindSpeedToKilometers(windSpeed) {
+  const toKilometer = Number(windSpeed * 1.609344);
+  if (toKilometer % 1 === 0) toKilometer.toString();
+  return Number(toKilometer.toFixed(1));
 }

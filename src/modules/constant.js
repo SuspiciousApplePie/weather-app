@@ -29,6 +29,7 @@ export const weatherCard = {
   FEELS_LIKE_CLASS: "feels-like",
   HUMIDITY_CLASS: "humidity",
   PRECIP_CLASS: "precip-chance",
+  WIND_CLASS: "windspeed",
 };
 
 export const icons = {
@@ -51,4 +52,9 @@ export const toggleButton = {
     text: "°C",
     id: "show-celsius",
   },
+};
+
+export const windMeasurement = {
+  KIlOMETER: "km/h",
+  MILES: "mph",
 };

@@ -7,6 +7,8 @@
   --dark: #333;
   --padding-sm: 8px;
   --padding-md: calc(var(--padding-sm) * 2);
+  --font-sm: 12px;
+  --font-md: calc(var(--font-sm) * 2);
 }
 
 *,
@@ -192,6 +194,9 @@ svg {
 
 .main {
   padding: var(--padding-md);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 
 /* Search bar */
 .search-bar {

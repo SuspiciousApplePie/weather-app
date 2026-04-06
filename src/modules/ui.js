@@ -51,11 +51,6 @@ export function createSearchBar() {
   input.placeholder = searchBar.INPUT_PLACEHOLDER;
   form.appendChild(input);
 
-  const button = document.createElement("button");
-  button.type = searchBar.BUTTON_TYPE;
-  button.textContent = searchBar.BUTTON_TEXT;
-  form.appendChild(button);
-
   searchElement.appendChild(form);
 
   return searchElement;

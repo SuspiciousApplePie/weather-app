@@ -4,8 +4,6 @@ export const searchBar = {
   INPUT_NAME: "search-place",
   INPUT_ID: "search-place",
   INPUT_PLACEHOLDER: "Search for City",
-  BUTTON_TEXT: "Search",
-  BUTTON_TYPE: "submit",
 };
 
 export const loadingSpinner = {
@@ -48,6 +46,7 @@ export const icons = {
 
 export const toggleButton = {
   CLASS_NAME: "temp-icon",
+  HIDE: "none",
   FARENHEIT: {
     text: "°F",
     id: "show-farenheit",

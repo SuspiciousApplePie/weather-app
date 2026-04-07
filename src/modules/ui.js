@@ -83,6 +83,14 @@ export function getHeader() {
   }
 }
 
+export function hideHeader(header) {
+  header.classList.add(toggleButton.HIDE);
+}
+
+export function showHeader(header) {
+  header.classList.remove(toggleButton.HIDE);
+}
+
 export function changeHeaderText(head, place) {
   head.textContent = place;
 }
@@ -289,7 +297,7 @@ export function createButton() {
   div.classList.add(toggleButton.HIDE);
   buttonDetails.forEach((item) => {
     const button = document.createElement("button");
-    button.textContent = item.text;
+    button.textContent = item.labelText;
     button.id = item.id;
     div.appendChild(button);
   });

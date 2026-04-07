@@ -8,7 +8,7 @@ import {
   createButton,
   createWrapper,
   createWeatherCardHeader,
-  hideHeader,
+  hideElement,
 } from "./ui";
 
 import {
@@ -23,11 +23,12 @@ export function init() {
   renderSearchBar(searchElement);
   const head = createWeatherCardHeader();
   renderHeader(head);
-  hideHeader(head);
+  hideElement(head);
   const buttons = createButton();
   renderButton(buttons);
   const wrapper = createWrapper();
   renderWrapper(wrapper);
+  hideElement(wrapper);
   setUpClickListener();
   setUpInputListener();
   setUpSumbitListener();

@@ -83,12 +83,12 @@ export function getHeader() {
   }
 }
 
-export function hideHeader(header) {
-  header.classList.add(toggleButton.HIDE);
+export function hideElement(element) {
+  element.classList.add(toggleButton.HIDE);
 }
 
-export function showHeader(header) {
-  header.classList.remove(toggleButton.HIDE);
+export function showElement(element) {
+  element.classList.remove(toggleButton.HIDE);
 }
 
 export function changeHeaderText(head, place) {

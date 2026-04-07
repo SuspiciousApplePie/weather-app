@@ -259,9 +259,12 @@ svg {
 
 .weather-wrapper {
   grid-column: 1 / -1;
+  background-color: var(--gray);
+  padding: var(--padding-md);
 }
 
 .temp-icon.none,
-.location.none {
+.location.none,
+.weather-wrapper.none {
   display: none;
 }

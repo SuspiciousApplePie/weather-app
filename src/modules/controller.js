@@ -40,6 +40,7 @@ export function setUpSumbitListener() {
       hideElement(head);
       const loading = createLoadingSpinner(input.value);
       const wrapper = getWeatherWrapper();
+      hideElement(wrapper);
       clearContent(wrapper);
       clearContent(head);
       renderLoadingSpinner(loading);
@@ -55,6 +56,8 @@ export function setUpSumbitListener() {
         const head = getHeader();
         showElement(head);
         changeHeaderText(head, currentWeatherData.resolvedAddress);
+        const wrapper = getWeatherWrapper();
+        showElement(wrapper);
       })
       .catch((error) => {
         console.log(error);

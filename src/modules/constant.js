@@ -50,10 +50,12 @@ export const toggleButton = {
   FARENHEIT: {
     text: "°F",
     id: "show-farenheit",
+    labelText: "Fahrenheit",
   },
   CELSIUS: {
     text: "°C",
     id: "show-celsius",
+    labelText: "Celsius",
   },
 };
 

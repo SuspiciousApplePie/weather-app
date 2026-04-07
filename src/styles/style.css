@@ -202,7 +202,6 @@ svg {
 
 /* Search bar */
 .search-bar {
-  padding: var(--padding-md);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,5 +230,30 @@ svg {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 }
+
+.temp-icon {
+  grid-column: 1 / -1;
+  grid-row: 3 / 3;
+  display: flex;
+}
+
+.temp-icon button {
+  flex: 1;
+  background-color: var(--brown);
+  color: var(--seconday-color);
+  padding: var(--padding-sm - 4);
+  font-size: calc(var(--font-sm) * 1.5);
+  border: none;
+  cursor: pointer;
+  border: 1px solid var(--brown);
+}
+
+.temp-icon button:hover {
+  background-color: var(--green);
+  color: var(--dark);
+  border-color: var(--dark);
+  border: 1px solid var(--dark);
+}
+
   display: none;
 }

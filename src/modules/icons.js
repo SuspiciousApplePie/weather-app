@@ -271,7 +271,6 @@ export const fog = `
 
 export const weatherCardIcons = {
   FEELS_LIKE: `<svg
-  fill="#aac7d5"
   viewBox="0 0 32 32"
   id="Layer_1"
   data-name="Layer 1"
@@ -311,8 +310,8 @@ export const weatherCardIcons = {
   </g>
 </svg>`,
   HUMIDITY: `<svg
-  fill="#aac7d5"
   viewBox="0 0 64 64"
+  class="humidity-icon"
   version="1.1"
   xml:space="preserve"
   xmlns="http://www.w3.org/2000/svg"

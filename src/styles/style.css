@@ -344,3 +344,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.error-message {
+  grid-column: 1 / -1;
+  background-color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 4px dashed var(--gray);
+}

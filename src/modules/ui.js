@@ -104,9 +104,20 @@ export function createErrorMessage() {
 }
 
 export function renderErrorMessage(errorMessage) {
-  const weatherWrap = document.querySelector(`.${weatherWrapper.CLASS_NAME}`);
+  const weatherWrap = document.querySelector(`.main`);
   if (!weatherCard) throw new Error("Element does not exist");
   weatherWrap.appendChild(errorMessage);
+}
+
+export function getErrorMessage() {
+  const element = document.querySelector(`.${error.CLASS_NAME}`);
+  if (!element) return;
+  return element;
+}
+
+export function deleteElement(element) {
+  if (!element) return;
+  element.remove();
 }
 
 /* Weather UI components */

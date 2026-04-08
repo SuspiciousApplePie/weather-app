@@ -12,6 +12,8 @@ import {
   showInCelsius,
   createErrorMessage,
   renderErrorMessage,
+  getErrorMessage,
+  deleteElement,
   showButton,
   hideButton,
   showElement,
@@ -36,6 +38,8 @@ export function setUpSumbitListener() {
 
     new Promise((resolve) => {
       hideButton();
+      const error = getErrorMessage();
+      deleteElement(error);
       const head = getHeader();
       hideElement(head);
       const loading = createLoadingSpinner(input.value);

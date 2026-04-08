@@ -170,7 +170,7 @@ export class WeatherCard {
   #createTemp() {
     const temp = document.createElement("h2");
     temp.className = weatherCard.TEMP_CLASS;
-    temp.textContent = this.temp + this.symbol;
+    temp.textContent = `${this.temp} ${this.symbol}`;
     return temp;
   }
 
@@ -188,7 +188,7 @@ export class WeatherCard {
     feelsLike.innerHTML = weatherIcons.weatherCardIcons.FEELS_LIKE;
 
     const span = document.createElement("span");
-    span.textContent = `${this.feelsLike}${this.symbol}`;
+    span.textContent = `${this.feelsLike} ${this.symbol}`;
 
     feelsLike.appendChild(span);
     return feelsLike;
@@ -200,7 +200,7 @@ export class WeatherCard {
     humidity.innerHTML = weatherIcons.weatherCardIcons.HUMIDITY;
 
     const span = document.createElement("span");
-    span.textContent = `${this.humidity}${this.symbol}`;
+    span.textContent = `${this.humidity} ${this.symbol}`;
 
     humidity.appendChild(span);
     return humidity;
@@ -223,7 +223,7 @@ export class WeatherCard {
     precipProb.innerHTML = weatherIcons.weatherCardIcons.PRECIP_CHANCE;
 
     const span = document.createElement("span");
-    span.textContent = `${this.precipProb}%`;
+    span.textContent = `${this.precipProb} %`;
     precipProb.appendChild(span);
     return precipProb;
   }

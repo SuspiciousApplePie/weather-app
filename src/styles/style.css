@@ -49,13 +49,9 @@
 .cloudy-icon .cls-2 {
   fill: #cae3f6;
 }
-.cloudy-icon .cls-3,
-.cloudy-icon .cls-4 {
+.cloudy-icon .cls-3 {
   fill: none;
   stroke: #000;
-}
-.cloudy-icon .cls-4 {
-  stroke-linecap: round;
 }
 
 /* Rainy */

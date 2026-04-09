@@ -1,5 +1,5 @@
 export const clearDay = `<svg xmlns="http://www.w3.org/2000/svg" class="clear-day-icon" viewBox="0 0 84.3 84.3">
-  <title>clear-dayAsset 135colored</title>
+  <title>Sunny</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
       <circle class="cls-1" cx="42.48" cy="42.15" r="18.72" />
@@ -27,17 +27,22 @@ export const clearDay = `<svg xmlns="http://www.w3.org/2000/svg" class="clear-da
   </g>
 </svg>
 `;
-export const cloudy = `<svg xmlns="http://www.w3.org/2000/svg" class="cloudy-icon" viewBox="0 0 115.07 73.01">
-  <title>rainAsset 184colored</title>
+export const cloudy = `
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="cloudy-icon"
+  viewBox="0 0 115.07 60.7"
+>
+  <title>Cloudy</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
       <path
         class="cls-1"
-        d="M76.77,49.06a1.32,1.32,0,0,1,.77-.46,24.92,24.92,0,0,0,11.14-4.1c6.44,4.75,11.95,5.4,17.45,2.13,4.78-2.85,7.7-8.5,6.76-13.85-1.38-8-6.52-12-14.43-12.57C95.82,10.36,89.79,3.79,79.75,2,68-.11,59.45,5,53.73,15.23"
+        d="M76.77,50.17a1.29,1.29,0,0,1,.77-.47,24.92,24.92,0,0,0,11.14-4.1c6.44,4.75,11.95,5.4,17.45,2.13,4.78-2.85,7.7-8.5,6.76-13.84-1.38-8-6.52-12-14.43-12.58C95.82,11.46,89.79,4.89,79.75,3.09,68,1,59.45,6.14,53.73,16.33"
       />
       <path
         class="cls-2"
-        d="M63.32,28.88H63a24,24,0,0,0-47,.87l-.87,0a13.89,13.89,0,0,0-5.53,1.6A14.38,14.38,0,0,0,7.2,33c-.4.33-.79.67-1.17,1A10.11,10.11,0,0,0,4,36.51,13.24,13.24,0,0,0,2.84,38.9C.28,46.85,4,52.81,8.23,55.66s11.5,4,17.85-1.57a24,24,0,0,0,27,0A14.67,14.67,0,1,0,63.32,28.88Z"
+        d="M63.32,30,63,30a24,24,0,0,0-47,.87q-.44,0-.87,0a14.06,14.06,0,0,0-5.53,1.6A14.44,14.44,0,0,0,7.2,34.07a14.06,14.06,0,0,0-1.17,1A10.11,10.11,0,0,0,4,37.61,13.24,13.24,0,0,0,2.84,40C.28,48,4,53.91,8.23,56.76s11.5,4,17.85-1.57a24,24,0,0,0,27,0A14.67,14.67,0,1,0,63.32,30Z"
       />
       <path
         class="cls-3"
@@ -47,15 +52,11 @@ export const cloudy = `<svg xmlns="http://www.w3.org/2000/svg" class="cloudy-ico
         class="cls-3"
         d="M63.32,29.35H63a24,24,0,0,0-47,.87l-.87,0a13.89,13.89,0,0,0-5.53,1.6A14.38,14.38,0,0,0,7.2,33.43c-.4.33-.79.67-1.17,1A10.11,10.11,0,0,0,4,37a13.24,13.24,0,0,0-1.13,2.39C.28,47.32,4,53.28,8.23,56.13s11.5,4,17.85-1.57a24,24,0,0,0,27,0A14.67,14.67,0,1,0,63.32,29.35Z"
       />
-      <line class="cls-4" x1="85.91" y1="64.74" x2="85.91" y2="71.01" />
-      <line class="cls-4" x1="60.08" y1="64.74" x2="60.08" y2="71.01" />
-      <line class="cls-4" x1="34.25" y1="64.74" x2="34.25" y2="71.01" />
     </g>
   </g>
-</svg>
-`;
+</svg>`;
 export const rainy = `<svg xmlns="http://www.w3.org/2000/svg" class="rainy-icon" viewBox="0 0 115.07 73.01">
-  <title>rainAsset 184colored</title>
+  <title>Rainy</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
       <path
@@ -83,7 +84,7 @@ export const rainy = `<svg xmlns="http://www.w3.org/2000/svg" class="rainy-icon"
 `;
 
 export const partlyCloudy = `<svg xmlns="http://www.w3.org/2000/svg" class="partly-cloudy-icon" viewBox="0 0 121.88 62.82">
-  <title>partly-cloudy-dayAsset 181colored</title>
+  <title>Partly Cloudy</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
       <path
@@ -113,7 +114,7 @@ export const partlyCloudy = `<svg xmlns="http://www.w3.org/2000/svg" class="part
 
 export const snow = `
 <svg xmlns="http://www.w3.org/2000/svg" class="snow-icon viewBox="0 0 115.07 89.62">
-  <title>snowAsset 198colored</title>
+  <title>Snowy</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
       <path
@@ -201,7 +202,7 @@ export const snow = `
 
 export const wind = `
 <svg xmlns="http://www.w3.org/2000/svg" class="wind-icon" viewBox="0 0 115.87 60.7">
-  <title>windAsset 191colored</title>
+  <title>Windy</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
       <path
@@ -243,7 +244,7 @@ export const fog = `
   xml:space="preserve"
   class="fog-icon"
 >
-  <title>33Asset 228FOG</title>
+  <title>Foggy</title>
   <g id="XMLID_5_">
     <path
       id="XMLID_4_"

@@ -356,3 +356,12 @@
   border-radius: 4px;
   border: 4px dashed var(--gray);
 }
+
+.loading-spinner {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #12355b;
+  color: var(--seconday-color);
+}

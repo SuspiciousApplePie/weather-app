@@ -286,6 +286,7 @@
   padding: var(--padding-sm);
   color: var(--seconday-color);
   font-size: calc(var(--font-sm) * 1.2);
+  font-weight: 600;
 }
 
 .weather-card .icon {

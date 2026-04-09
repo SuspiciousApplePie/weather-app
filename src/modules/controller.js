@@ -23,6 +23,7 @@ import {
   higlightCelsiusButton,
   higlightFahrenheitButton,
   removeButtonHiglight,
+  clearInput,
 } from "./ui";
 
 let currentWeatherData;
@@ -78,6 +79,7 @@ export function setUpSumbitListener() {
       .finally(() => {
         removeLoading();
         enableSearchBar(input);
+        clearInput(input);
       });
   });
 }

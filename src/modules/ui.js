@@ -61,6 +61,10 @@ export function renderSearchBar(searchElement) {
   main.appendChild(searchElement);
 }
 
+export function clearInput(input) {
+  input.value = "";
+}
+
 export function disableSearchBar(input) {
   input.disabled = true;
 }

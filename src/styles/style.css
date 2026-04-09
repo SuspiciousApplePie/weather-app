@@ -17,6 +17,24 @@
   --font-lg: calc(var(--font-sm) * 3);
 }
 
+@font-face {
+  font-family: "syneregular";
+  src:
+    url("../fonts/syne-variablefont_wght-webfont.woff2") format("woff2"),
+    url("../fonts/syne-variablefont_wght-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "outfitthin";
+  src:
+    url("../fonts/outfit-variablefont_wght-webfont.woff2") format("woff2"),
+    url("../fonts/syne-variablefont_wght-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 *,
 *::before,
 *::after {
@@ -155,10 +173,7 @@
 .precip-chance-icon path {
   fill: var(--blue);
 }
-/* Container */
-.container {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
+
 /* Header */
 .header {
   display: flex;
@@ -168,6 +183,9 @@
   padding: var(--padding-sm);
   color: var(--seconday-color);
   box-shadow: 0 4px 10px 1px var(--gray);
+  font-family:
+    "syneregular", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }
 
 .header svg {
@@ -204,6 +222,9 @@
   border-radius: var(--padding-sm);
   padding: var(--padding-sm);
   font-size: calc(var(--font-sm) * 1.3);
+  font-family:
+    "outfitthin", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }
 
 .location {
@@ -214,6 +235,11 @@
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   color: var(--seconday-color);
+  font-family:
+    "syneregular", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  display: flex;
+  align-items: center;
 }
 
 .temp-icon {
@@ -231,6 +257,9 @@
   border: none;
   cursor: pointer;
   border: 1px solid var(--brown);
+  font-family:
+    "syneregular", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }
 
 .temp-icon button:hover,
@@ -239,6 +268,11 @@
   color: var(--dark);
   border-color: var(--dark);
   border: 1px solid var(--dark);
+}
+
+.temp-icon button:hover {
+  background-color: var(--seconday-color);
+  color: var(--orange);
 }
 
 .weather-wrapper {
@@ -252,6 +286,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--padding-sm);
+  font-family:
+    "outfitthin", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }
 
 .weather-wrapper svg {
@@ -355,6 +392,9 @@
   justify-content: center;
   border-radius: 4px;
   border: 4px dashed var(--gray);
+  font-family:
+    "syneregular", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }
 
 .loading-spinner {
@@ -364,4 +404,7 @@
   align-items: center;
   background-color: #12355b;
   color: var(--seconday-color);
+  font-family:
+    "syneregular", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }

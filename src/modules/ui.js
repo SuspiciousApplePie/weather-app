@@ -168,14 +168,19 @@ export class WeatherCard {
   createWeatherCard() {
     const card = document.createElement("div");
     card.className = weatherCard.CARD_CLASS;
-    card.appendChild(this.#createImage());
-    card.appendChild(this.#createTemp());
-    card.appendChild(this.#createDescription());
-    card.appendChild(this.#createFeelsLike());
-    card.appendChild(this.#createHumidity());
-    card.appendChild(this.#createPrecipChance());
-    card.appendChild(this.#createWindspeed());
-    card.appendChild(this.#createDate());
+    const components = [
+      this.#createImage(),
+      this.#createTemp(),
+      this.#createDescription(),
+      this.#createFeelsLike(),
+      this.#createHumidity(),
+      this.#createPrecipChance(),
+      this.#createWindspeed(),
+      this.#createDate(),
+    ];
+    components.forEach((component) => {
+      card.appendChild(component);
+    });
     return card;
   }
 

@@ -350,6 +350,40 @@ export function renderButton(buttons) {
   main.appendChild(buttons);
 }
 
+export function higlightCelsiusButton() {
+  try {
+    const buttons = document.querySelector(`#${toggleButton.CELSIUS.id}`);
+    if (!buttons) throw new Error("Element not found");
+    buttons.classList.add(toggleButton.ACTIVE);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export function higlightFahrenheitButton() {
+  try {
+    const buttons = document.querySelector(`#${toggleButton.FARENHEIT.id}`);
+    if (!buttons) throw new Error("Element not found");
+    buttons.classList.add(toggleButton.ACTIVE);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export function removeButtonHiglight() {
+  try {
+    const buttons = document.querySelectorAll(
+      `.${toggleButton.CLASS_NAME} > button`,
+    );
+    if (!buttons) throw new Error("Element not found");
+    buttons.forEach((button) => {
+      button.classList.remove(toggleButton.ACTIVE);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export function showInFahrenheit(currentWeatherData) {
   if (!currentWeatherData) return null;
   currentWeatherData.days.forEach((item) => {

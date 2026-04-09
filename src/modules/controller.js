@@ -20,6 +20,9 @@ import {
   hideElement,
   disableSearchBar,
   enableSearchBar,
+  higlightCelsiusButton,
+  higlightFahrenheitButton,
+  removeButtonHiglight,
 } from "./ui";
 
 let currentWeatherData;
@@ -56,6 +59,7 @@ export function setUpSumbitListener() {
       })
       .then((weatherData) => {
         showButton();
+        higlightCelsiusButton();
         currentWeatherData = weatherData;
         showInCelsius(currentWeatherData);
         const head = getHeader();
@@ -94,12 +98,15 @@ export function setUpInputListener() {
 export function setUpClickListener() {
   const main = document.querySelector(".main");
   main.addEventListener("click", (event) => {
+    removeButtonHiglight();
     if (event.target.id === toggleButton.CELSIUS.id) {
+      higlightCelsiusButton();
       const wrapper = getWeatherWrapper();
       clearContent(wrapper);
       showInCelsius(currentWeatherData);
     } else if (event.target.id === toggleButton.FARENHEIT.id) {
       const wrapper = getWeatherWrapper();
+      higlightFahrenheitButton();
       clearContent(wrapper);
       showInFahrenheit(currentWeatherData);
     }

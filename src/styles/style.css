@@ -233,7 +233,8 @@
   border: 1px solid var(--brown);
 }
 
-.temp-icon button:hover {
+.temp-icon button:hover,
+.temp-icon .active {
   background-color: var(--orange);
   color: var(--dark);
   border-color: var(--dark);

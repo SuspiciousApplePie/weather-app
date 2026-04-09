@@ -45,6 +45,7 @@ export const icons = {
 };
 
 export const toggleButton = {
+  ACTIVE: "active",
   CLASS_NAME: "temp-icon",
   HIDE: "none",
   FARENHEIT: {

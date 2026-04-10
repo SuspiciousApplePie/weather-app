@@ -444,12 +444,10 @@ export function showInCelsius(currentWeatherData) {
 
 function formatNumberToCelcius(num) {
   const calculatedNum = Number(((num - 32) * 5) / 9);
-  if (calculatedNum % 1 === 0) calculatedNum.toString();
   return Number(calculatedNum.toFixed(1));
 }
 
 function formatWindSpeedToKilometers(windSpeed) {
   const toKilometer = Number(windSpeed * 1.609344);
-  if (toKilometer % 1 === 0) toKilometer.toString();
   return Number(toKilometer.toFixed(1));
 }

@@ -35,11 +35,11 @@ export function setUpSumbitListener() {
   searchElement.addEventListener("submit", (event) => {
     event.preventDefault();
     const input = event.target.querySelector(`#${searchBar.INPUT_ID}`);
-    disableSearchBar(input);
     if (!input.validity.valid) {
       validateSearchInput(input);
       return;
     }
+    disableSearchBar(input);
     hideButton();
     const error = getErrorMessage();
     deleteElement(error);
